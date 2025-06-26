@@ -137,16 +137,6 @@ export default function Home() {
                   </li>
                   <li>
                     <a
-                      href="https://redcircle.com/shows/theotherwomanandthewife"
-                      className="text-primary hover:underline"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      The Other Woman and the Wife Podcast
-                    </a>
-                  </li>
-                  <li>
-                    <a
                       href="https://www.scribd.com/document/808219056/The-Other-Woman-and-The-Wife-LLC-vs-Kristen-Jacobs-Lawsuit-Countersuit"
                       className="text-primary hover:underline"
                       target="_blank"
@@ -164,6 +154,16 @@ export default function Home() {
                       rel="noopener noreferrer"
                     >
                       Kristen Jacobs&apos; GoFundMe Campaign
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://redcircle.com/shows/theotherwomanandthewife"
+                      className="text-primary hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      The Other Woman and the Wife Podcast
                     </a>
                   </li>
                 </ul>
