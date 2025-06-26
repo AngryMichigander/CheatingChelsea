@@ -76,9 +76,12 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <div className="text-center my-8">
+            <div className="flex flex-wrap justify-center items-center gap-4 my-8">
               <Button asChild variant="outline" size="lg">
                 <Link href="/long-story">Read The Full Story &raquo;</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link href="/gallery">View Video Gallery &raquo;</Link>
               </Button>
             </div>
 

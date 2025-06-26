@@ -190,9 +190,12 @@ export default function LongStoryPage() {
               </CardContent>
             </Card>
 
-            <div className="text-center mt-12">
+            <div className="flex justify-center items-center gap-4 mt-12">
                 <Button asChild>
                     <Link href="/">Back to Home</Link>
+                </Button>
+                <Button asChild variant="outline">
+                    <Link href="/gallery">View Video Gallery &raquo;</Link>
                 </Button>
             </div>
           </div>
