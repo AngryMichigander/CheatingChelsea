@@ -5,7 +5,6 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
 } from '@/components/ui/card';
 
 export default function Home() {
@@ -26,9 +25,9 @@ export default function Home() {
           <div className="space-y-8">
             <Card>
               <CardHeader>
-                <CardTitle className="text-2xl font-bold font-headline">
+                <h2 className="text-2xl font-bold font-headline leading-none tracking-tight">
                   Who is Chelsea Smallwood?
-                </CardTitle>
+                </h2>
               </CardHeader>
               <CardContent className="space-y-4 text-lg text-card-foreground">
                 <p>
@@ -50,9 +49,9 @@ export default function Home() {
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-2xl font-bold font-headline">
+                <h2 className="text-2xl font-bold font-headline leading-none tracking-tight">
                   The Harm Caused: Kristen Jacobs&apos; Story
-                </CardTitle>
+                </h2>
               </CardHeader>
               <CardContent className="space-y-4 text-lg text-card-foreground">
                 <p>
@@ -77,9 +76,9 @@ export default function Home() {
 
             <Card className="border-2 border-destructive shadow-lg">
               <CardHeader className="text-center">
-                <CardTitle className="text-3xl font-bold font-headline text-primary">
+                <h2 className="text-3xl font-bold font-headline text-primary leading-none tracking-tight">
                   Stand With Kristen
-                </CardTitle>
+                </h2>
                 <CardDescription className="text-lg pt-2">
                   Help her fight back against online harassment and
                   exploitation.
@@ -111,9 +110,9 @@ export default function Home() {
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-2xl font-bold font-headline">
+                <h2 className="text-2xl font-bold font-headline leading-none tracking-tight">
                   Sources and Evidence
-                </CardTitle>
+                </h2>
               </CardHeader>
               <CardContent>
                 <ul className="list-disc space-y-2 pl-5 text-base text-card-foreground">
