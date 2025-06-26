@@ -34,7 +34,7 @@ export default function GalleryPage() {
                 <div className="relative overflow-hidden rounded-md" style={{ paddingTop: '56.25%' }}>
                   <iframe
                     className="absolute top-0 left-0 w-full h-full"
-                    src={`https://www.youtube.com/embed/${video.id}`}
+                    src={`https://www.youtube-nocookie.com/embed/${video.id}`}
                     title={`YouTube video player: ${video.title}`}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
