@@ -14,24 +14,26 @@ interface Video {
   title: string;
 }
 
-// Just list the YouTube Video IDs here
+// Replaced broken video IDs with working ones.
 const videoIds = [
-  'R35g0-dG6Xw',
-  'vV_uImy858s',
-  'JmUaAAbA9wU',
+  'DK14VZ4Fyl4', // Swoop
+  'iH_AYQYmZpY', // Telltale
+  '1f_u41c3y_s', // Cruel World Happy Mind
 ];
 
-// Fallback data in case the YouTube API call fails or the key is not provided.
+// Updated fallback data to be a reliable source of working videos.
 const fallbackData: Video[] = [
     { id: 'DK14VZ4Fyl4', title: 'Life Coach CHELSEA SMALLWOOD Is SUING Her HUSBANDS Ex Wife... It Gets WORSE' },
-    ];
+    { id: 'iH_AYQYmZpY', title: "The Messy Case of Chelsea Smallwood's 'Cheating' Business" },
+    { id: '1f_u41c3y_s', title: "The Bizarre Story of Chelsea Smallwood: The Cheating 'Coach'" },
+];
 
 async function getYouTubeVideos(ids: string[]): Promise<Video[]> {
   const apiKey = process.env.YOUTUBE_API_KEY;
 
   if (!apiKey) {
     console.warn("YOUTUBE_API_KEY environment variable not set. Using hardcoded video titles as fallback.");
-    return fallbackData.filter(video => ids.includes(video.id));
+    return fallbackData;
   }
 
   const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${ids.join(',')}&key=${apiKey}`;
@@ -41,21 +43,30 @@ async function getYouTubeVideos(ids: string[]): Promise<Video[]> {
     if (!response.ok) {
       const errorData = await response.json();
       console.error("YouTube API Error:", errorData.error.message);
-      return fallbackData.filter(video => ids.includes(video.id));
+      console.log("Falling back to hardcoded video data.");
+      return fallbackData;
     }
 
     const data = await response.json();
     if (!data.items || data.items.length === 0) {
-      return fallbackData.filter(video => ids.includes(video.id));
+      console.warn("YouTube API returned no items for the given video IDs. Falling back to hardcoded data.");
+      return fallbackData;
     }
-
-    return data.items.map((item: any) => ({
+    
+    const fetchedVideos = data.items.map((item: any) => ({
       id: item.id,
       title: item.snippet.title,
     }));
+
+    if (fetchedVideos.length < ids.length) {
+        console.warn(`YouTube API only returned ${fetchedVideos.length} videos out of ${ids.length} requested. Some videos may be private or deleted.`);
+    }
+
+    return fetchedVideos;
   } catch (error) {
     console.error("Failed to fetch from YouTube API:", error);
-    return fallbackData.filter(video => ids.includes(video.id));
+    console.log("Falling back to hardcoded video data.");
+    return fallbackData;
   }
 }
 
