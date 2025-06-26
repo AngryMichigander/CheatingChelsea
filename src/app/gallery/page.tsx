@@ -2,6 +2,8 @@
 import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
+import { ExternalLink } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: "Video Gallery - Community Coverage of Chelsea Smallwood",
@@ -78,18 +80,26 @@ export default async function GalleryPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {videos.length > 0 ? videos.map((video) => (
-              <div key={video.id} className="bg-card p-4 rounded-lg shadow-sm border">
-                <div className="relative overflow-hidden rounded-md" style={{ paddingTop: '56.25%' }}>
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full"
-                    src={`https://www.youtube-nocookie.com/embed/${video.id}`}
-                    title={`YouTube video player: ${video.title}`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
+              <div key={video.id} className="bg-card rounded-lg shadow-sm border overflow-hidden flex flex-col">
+                <Link href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noopener noreferrer" className="block relative group">
+                  <Image
+                    src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                    alt={`Thumbnail for ${video.title}`}
+                    width={480}
+                    height={360}
+                    className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                   <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg className="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </div>
+                </Link>
+                <div className="p-4 flex-grow">
+                   <h2 className="text-lg font-semibold text-card-foreground">
+                     <Link href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center gap-2">
+                       {video.title} <ExternalLink className="w-4 h-4 text-muted-foreground" />
+                     </Link>
+                   </h2>
                 </div>
-                <h2 className="mt-4 text-lg font-semibold text-card-foreground">{video.title}</h2>
               </div>
             )) : (
                <p className="text-center col-span-full">Could not load videos. Please try again later.</p>
