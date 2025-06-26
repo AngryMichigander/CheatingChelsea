@@ -10,44 +10,29 @@ import {
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
       <main className="flex-grow">
         <div className="container mx-auto max-w-4xl py-12 px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-primary font-headline">
-              Cheating Chelsea Exposed
+              Chelsea Smallwood&apos;s controversial empire built on infidelity
             </h1>
-            <p className="mt-4 text-lg text-muted-foreground">
-              An investigation into Chelsea Smallwood&apos;s controversial
-              empire built on infidelity.
-            </p>
           </header>
 
           <div className="space-y-8">
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold font-headline">
-                  From Personal Scandal to Business Opportunity
+                  From personal scandal to business opportunity
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 text-base text-card-foreground">
                 <p>
-                  Chelsea Smallwood, a California-based TikTok creator and
-                  lifestyle coach, has built a multifaceted business empire
-                  around infidelity experiences through her organization
-                  &quot;The Other Woman and the Wife.&quot; The organization, which
-                  includes a podcast, coaching services, online community, and
-                  retreats, has grown from Smallwood&apos;s personal experience of
-                  having an affair with a married coworker in 2013 to become a
-                  controversial platform that monetizes complex relationship
-                  dynamics while facing serious legal challenges in 2025.
-                </p>
-                <p>
-                  Her journey began with her own extramarital affair. Living in
-                  Novato, California, Smallwood initially gained attention by
-                  creating TikTok content about her affair experience, including
-                  videos where she would dance while sharing details about her
-                  relationship with a married man.{' '}
+                  Chelsea Smallwood&apos;s journey began with her own extramarital
+                  affair. Living in Novato, California, Smallwood initially
+                  gained attention by creating TikTok content about her affair
+                  experience, including videos where she would dance while
+                  sharing details about her relationship with a married man.{' '}
                   <strong>
                     She holds only a bachelor&apos;s degree in Economics with no
                     formal qualifications in counseling or life coaching
@@ -60,7 +45,9 @@ export default function Home() {
                   partner, with whom she now has children, Smallwood transformed
                   her personal experience into a business model. She evolved
                   from creating &quot;relatable affair content&quot; to establishing
-                  The Other Woman and the Wife LLC.
+                  The Other Woman and the Wife LLC, expanding beyond social
+                  media into multiple revenue streams including coaching,
+                  community memberships, and retreat hosting.
                 </p>
               </CardContent>
             </Card>
@@ -68,7 +55,8 @@ export default function Home() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold font-headline">
-                  A Controversial Business Model
+                  The Other Woman and the Wife operates across multiple
+                  platforms
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 text-base text-card-foreground">
@@ -82,26 +70,25 @@ export default function Home() {
                   </strong>{' '}
                   The podcast, co-hosted by Smallwood and Ann Marie, describes
                   itself as &quot;a show about infidelity, why it exists and what
-                  we can learn from it.&quot;
+                  we can learn from it,&quot; available on all major podcast
+                  platforms.
+                </p>
+                <p>
+                  The coaching services have expanded to include qualified
+                  professionals like Carolina Vilalva, a certified Executive and
+                  Life Coach from Columbia University with over 11 years of
+                  experience. The team also includes Kristine Haraldsson, a
+                  coach with over 100,000 social media followers, attempting to
+                  add legitimacy to services that began without professional
+                  credentials.
                 </p>
                 <p>
                   Their online community operates as a paid membership forum
                   where participants discuss infidelity experiences in what the
-                  organization markets as a &quot;judgment-free space.&quot;
-                </p>
-                <p>
-                  The organization&apos;s social media presence drives its growth.
-                  Their TikTok account @theowandthewife has accumulated{' '}
-                  <strong>47,300 followers and 1.1 million likes</strong>. The
-                  content strategy focuses on &quot;humanizing humans&quot; and
-                  providing &quot;coaching with compassion,&quot; though critics argue
-                  the approach normalizes harmful behavior.
-                </p>
-                <p>
-                  To add a veneer of legitimacy, the team now includes licensed
-                  professionals like clinical therapist Carolina Vilalva, an
-                  evolution from the initial model built solely on personal
-                  experience.
+                  organization markets as a &quot;judgment-free space.&quot; Members
+                  pay fees to access private forums, support groups, and
+                  resources, with promotional codes like &quot;PODCAST&quot; offering
+                  $10 discounts to new members.
                 </p>
               </CardContent>
             </Card>
@@ -109,11 +96,39 @@ export default function Home() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold font-headline">
-                  Major Lawsuit Threatens the Empire
+                  Social media presence drives controversial growth
                 </CardTitle>
-                <CardDescription>
-                  Kristen Jacobs&apos; Story of Harm
-                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4 text-base text-card-foreground">
+                <p>
+                  The organization maintains an active digital footprint across
+                  multiple platforms. Their TikTok account @theowandthewife has
+                  accumulated{' '}
+                  <strong>47,300 followers and 1.1 million likes</strong>,
+                  while their Instagram presence and websites (towtw.com and
+                  theotherwomanandthewife.com) serve as primary touchpoints for
+                  their audience. The content strategy focuses on
+                  &quot;humanizing humans&quot; and providing &quot;coaching with
+                  compassion,&quot; though critics argue the approach normalizes
+                  harmful behavior.
+                </p>
+                <p>
+                  Smallwood&apos;s content evolution reflects attempts to distance
+                  the brand from its controversial origins. She has reportedly
+                  wiped much of her original TikTok content that explicitly
+                  celebrated affair experiences, attempting to rebrand as a more
+                  professional coaching service. Despite these efforts, the
+                  organization&apos;s foundation on monetizing infidelity
+                  continues to generate significant criticism.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold font-headline">
+                  Major lawsuit threatens the organization&apos;s future
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 text-base text-card-foreground">
                 <p>
@@ -125,21 +140,86 @@ export default function Home() {
                     serious counter-allegations including tortious interference
                     with business relations, cyberbullying, invasion of privacy,
                     and emotional distress.
-                  </strong>
+                  </strong>{' '}
+                  The lawsuit has exposed troubling practices within the
+                  community.
                 </p>
                 <p>
                   Court documents reveal allegations that the organization
-                  shared Kristen Jacobs&apos; private text messages, personal
-                  medical information, and photos of children without consent.
-                  The community allegedly enabled members to mock and harass
-                  victims of infidelity, with accusations of contacting
-                  victims&apos; therapists and making inappropriate statements about
-                  their mental health.
+                  shared private text messages, personal medical information,
+                  and photos of children without consent. The community
+                  allegedly enabled members to mock and harass victims of
+                  infidelity, with accusations of contacting victims&apos;
+                  therapists and making inappropriate statements about their
+                  mental health. These practices have led to a GoFundMe campaign
+                  supporting the defendant and increased scrutiny of the
+                  organization&apos;s methods.
                 </p>
                 <p>
                   Critics describe the community as promoting &quot;depraved petty
                   behavior&quot; and creating &quot;a horrifying place for only
-                  UNhealing to occur.&quot;
+                  UNhealing to occur.&quot; Reviews suggest the platform encourages
+                  gaslighting and gives false hope to affair partners seeking to
+                  legitimize their relationships. However, some supporters praise
+                  the &quot;well-executed conversations about deeper human
+                  psychology&quot; and value the sense of connection within the
+                  community.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold font-headline">
+                  Monetizing controversy through multiple revenue streams
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4 text-base text-card-foreground">
+                <p>
+                  The business model relies on diversified income sources that
+                  capitalize on the emotional vulnerability of people affected
+                  by infidelity. Revenue comes from community membership fees,
+                  individual coaching sessions priced at premium rates despite
+                  Smallwood&apos;s lack of credentials, podcast monetization
+                  through sponsorships and advertising, retreat fees for events
+                  in Puerto Vallarta, Mexico, and online courses marketed to
+                  those seeking guidance through affair situations.
+                </p>
+                <p>
+                  <strong>
+                    The organization&apos;s expansion to include licensed
+                    professionals appears designed to legitimize services that
+                    began without proper qualifications
+                  </strong>
+                  , potentially shielding the business from criticism about
+                  unqualified coaching. This strategic hiring of credentialed
+                  team members like clinical therapist Carolina Vilalva
+                  represents an evolution from the initial model built solely on
+                  personal experience.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold font-headline">
+                  Conclusion
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4 text-base text-card-foreground">
+                <p>
+                  Chelsea Smallwood&apos;s transformation from TikTok creator
+                  sharing affair stories to CEO of The Other Woman and the Wife
+                  LLC illustrates how personal scandal can be monetized in the
+                  digital age. While the organization claims to provide support
+                  and understanding for those navigating complex relationship
+                  dynamics, the pending lawsuit and numerous allegations of
+                  harmful practices raise serious questions about the ethics of
+                  profiting from infidelity experiences. The organization&apos;s
+                  future depends on resolving legal challenges while attempting
+                  to maintain credibility in an inherently controversial space
+                  that many view as exploiting vulnerable individuals rather
+                  than genuinely helping them heal.
                 </p>
               </CardContent>
             </Card>
@@ -181,28 +261,6 @@ export default function Home() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold font-headline">
-                  Conclusion
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4 text-base text-card-foreground">
-                <p>
-                  Chelsea Smallwood&apos;s transformation from TikTok creator
-                  sharing affair stories to CEO of The Other Woman and the Wife
-                  LLC illustrates how personal scandal can be monetized in the
-                  digital age. While the organization claims to provide support,
-                  the pending lawsuit and numerous allegations of harmful
-                  practices raise serious questions about the ethics of
-                  profiting from infidelity experiences. The organization&apos;s
-                  future depends on resolving these legal challenges while many
-                  view it as exploiting vulnerable individuals rather than
-                  genuinely helping them heal.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl font-bold font-headline">
                   Sources and Evidence
                 </CardTitle>
               </CardHeader>
@@ -215,13 +273,34 @@ export default function Home() {
                 <ul className="list-disc space-y-2 pl-5">
                   <li>
                     <a
-                      href="#"
+                      href="https://www.scribd.com/document/808219056/The-Other-Woman-and-The-Wife-LLC-vs-Kristen-Jacobs-Lawsuit-Countersuit"
                       className="text-primary hover:underline"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       The Other Woman and the Wife LLC v. Kristen Jacobs - Miami
                       County, Ohio Common Pleas Court (Case No. 24-498)
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.themarysue.com/what-i-can-only-describe-as-pure-degeneracy-proud-cheater-sued-for-allegedly-using-cheating-coach-business-to-bully-betrayed-spouses/"
+                      className="text-primary hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      The Mary Sue: &quot;Proud Cheater Sued for Allegedly Using
+                      Cheating Coach Business to Bully Betrayed Spouses&quot;
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://redcircle.com/shows/theotherwomanandthewife"
+                      className="text-primary hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      The Other Woman and the Wife Podcast
                     </a>
                   </li>
                   <li>
@@ -242,6 +321,16 @@ export default function Home() {
                       rel="noopener noreferrer"
                     >
                       Official Website for The Other Woman and the Wife
+                    </a>
+                  </li>
+                   <li>
+                    <a
+                      href="https://www.gofundme.com/f/help-kristen-stand-against-online-harassment-for-profit"
+                      className="text-primary hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Kristen Jacobs&apos; GoFundMe Campaign
                     </a>
                   </li>
                 </ul>
