@@ -119,17 +119,6 @@ export default function Home() {
                 <ul className="list-disc space-y-2 pl-5 text-base text-card-foreground">
                   <li>
                     <a
-                      href="https://www.scribd.com/document/808219056/The-Other-Woman-and-The-Wife-LLC-vs-Kristen-Jacobs-Lawsuit-Countersuit"
-                      className="text-primary hover:underline"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      The Other Woman and the Wife LLC v. Kristen Jacobs - Miami
-                      County, Ohio Common Pleas Court (Case No. 24-498)
-                    </a>
-                  </li>
-                  <li>
-                    <a
                       href="https://www.themarysue.com/what-i-can-only-describe-as-pure-degeneracy-proud-cheater-sued-for-allegedly-using-cheating-coach-business-to-bully-betrayed-spouses/"
                       className="text-primary hover:underline"
                       target="_blank"
@@ -147,6 +136,17 @@ export default function Home() {
                       rel="noopener noreferrer"
                     >
                       The Other Woman and the Wife Podcast
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.scribd.com/document/808219056/The-Other-Woman-and-The-Wife-LLC-vs-Kristen-Jacobs-Lawsuit-Countersuit"
+                      className="text-primary hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      The Other Woman and the Wife LLC v. Kristen Jacobs - Miami
+                      County, Ohio Common Pleas Court (Case No. 24-498)
                     </a>
                   </li>
                   <li>
@@ -171,6 +171,15 @@ export default function Home() {
           <p>
             This website, cheatingchelsea.com, is dedicated to raising
             awareness and supporting the victims.
+          </p>
+           <p>
+            For questions, comments, or concerns, please email:{' '}
+            <a
+              href="mailto:notacheater@cheatingchelsea.com"
+              className="text-primary hover:underline"
+            >
+              notacheater@cheatingchelsea.com
+            </a>
           </p>
           <p>&copy; 2025 Cheating Chelsea Exposed. All Rights Reserved.</p>
         </div>
