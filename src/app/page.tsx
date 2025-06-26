@@ -264,13 +264,8 @@ export default function Home() {
                   Sources and Evidence
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 text-base text-card-foreground">
-                <p>
-                  The claims made on this website are supported by evidence and
-                  public records. We believe in transparency and holding
-                  individuals accountable for their actions.
-                </p>
-                <ul className="list-disc space-y-2 pl-5">
+              <CardContent>
+                <ul className="list-disc space-y-2 pl-5 text-base text-card-foreground">
                   <li>
                     <a
                       href="https://www.scribd.com/document/808219056/The-Other-Woman-and-The-Wife-LLC-vs-Kristen-Jacobs-Lawsuit-Countersuit"
@@ -305,26 +300,6 @@ export default function Home() {
                   </li>
                   <li>
                     <a
-                      href="https://www.tiktok.com/@theowandthewife"
-                      className="text-primary hover:underline"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Official TikTok Account for The Other Woman and the Wife
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.theotherwomanandthewife.com/"
-                      className="text-primary hover:underline"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Official Website for The Other Woman and the Wife
-                    </a>
-                  </li>
-                   <li>
-                    <a
                       href="https://www.gofundme.com/f/help-kristen-stand-against-online-harassment-for-profit"
                       className="text-primary hover:underline"
                       target="_blank"
@@ -334,10 +309,6 @@ export default function Home() {
                     </a>
                   </li>
                 </ul>
-                <p>
-                  We encourage visitors to review the information and draw their
-                  own conclusions.
-                </p>
               </CardContent>
             </Card>
           </div>
