@@ -70,47 +70,6 @@ export default function LongStoryPage() {
             <Card>
               <CardHeader>
                 <h2 className="text-2xl font-bold font-headline leading-none tracking-tight">
-                  The Other Woman and the Wife Operates Across Multiple
-                  Platforms
-                </h2>
-              </CardHeader>
-              <CardContent className="space-y-4 text-lg text-card-foreground">
-                <p>
-                  The organization functions as a comprehensive ecosystem for
-                  people involved in or affected by infidelity.{' '}
-                  <strong>
-                    The business includes a weekly podcast with over 75
-                    episodes, individual and group coaching services, a paid
-                    online community, and women&apos;s retreats in Mexico.
-                  </strong>{' '}
-                  The podcast, co-hosted by Smallwood and Ann Marie, describes
-                  itself as &quot;a show about infidelity, why it exists and what
-                  we can learn from it,&quot; available on all major podcast
-                  platforms.
-                </p>
-                <p>
-                  The coaching services have expanded to include qualified
-                  professionals like Carolina Vilalva, a certified Executive
-                  and Life Coach from Columbia University with over 11 years of
-                  experience. The team also includes Kristine Haraldsson, a
-                  coach with over 100,000 social media followers, attempting to
-                  add legitimacy to services that began without professional
-                  credentials.
-                </p>
-                <p>
-                  Their online community operates as a paid membership forum
-                  where participants discuss infidelity experiences in what the
-                  organization markets as a &quot;judgment-free space.&quot; Members pay
-                  fees to access private forums, support groups, and resources,
-                  with promotional codes like &quot;PODCAST&quot; offering $10 discounts
-                  to new members.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <h2 className="text-2xl font-bold font-headline leading-none tracking-tight">
                   Social Media Presence Drives Controversial Growth
                 </h2>
               </CardHeader>
