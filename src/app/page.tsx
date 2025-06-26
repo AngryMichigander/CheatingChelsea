@@ -172,7 +172,7 @@ export default function Home() {
             This website, cheatingchelsea.com, is dedicated to raising
             awareness and supporting the victims.
           </p>
-          <p>&copy; 2024 Cheating Chelsea Exposed. All Rights Reserved.</p>
+          <p>&copy; 2025 Cheating Chelsea Exposed. All Rights Reserved.</p>
         </div>
       </footer>
     </div>
