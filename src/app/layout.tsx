@@ -6,7 +6,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 export const metadata: Metadata = {
   title: 'Cheating Chelsea Exposed - The Truth About Chelsea Smallwood',
   description:
-    "Exposing the harm caused by Chelsea Smallwood and 'The Other Woman and the Wife' group. Learn about the Kristen Jacobs lawsuit, online harassment, and the controversial business of monetizing infidelity.",
+    "Uncovering the truth about Chelsea Smallwood, The Other Woman and the Wife, and the Kristen Jacobs lawsuit. Exposing the controversial business of monetizing infidelity, cyberbullying, and online harassment.",
   keywords: [
     'Chelsea Smallwood',
     'The Other Woman and the Wife',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cheating Chelsea Exposed - The Truth About Chelsea Smallwood',
     description:
-      "Exposing the harm caused by Chelsea Smallwood's controversial business.",
+      "Uncovering the truth about Chelsea Smallwood and the controversial business of monetizing infidelity.",
     images: [
       {
         url: 'https://placehold.co/1200x630.png',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Cheating Chelsea Exposed - The Truth About Chelsea Smallwood',
     description:
-      "Exposing the harm caused by Chelsea Smallwood's controversial business.",
+      "Uncovering the truth about Chelsea Smallwood and the controversial business of monetizing infidelity.",
     images: ['https://placehold.co/1200x630.png'],
   },
   robots: {
