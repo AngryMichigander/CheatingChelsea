@@ -32,7 +32,7 @@ export default function GalleryPage() {
             {videos.map((video) => (
               <div key={video.id} className="bg-card p-4 rounded-lg shadow-sm border">
                 <div className="relative overflow-hidden rounded-md" style={{ paddingTop: '56.25%' }}>
-                   <iframe
+                  <iframe
                     className="absolute top-0 left-0 w-full h-full"
                     src={`https://www.youtube.com/embed/${video.id}`}
                     title={`YouTube video player: ${video.title}`}
