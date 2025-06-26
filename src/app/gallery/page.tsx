@@ -8,13 +8,61 @@ export const metadata: Metadata = {
     description: "Watch YouTube commentary and analysis on Chelsea Smallwood, The Other Woman and the Wife, and the ongoing controversy.",
 };
 
-const videos = [
-  { id: 'R35g0-dG6Xw', title: 'Life Coach CHELSEA SMALLWOOD Is SUING Her HUSBANDS Ex Wife... It Gets WORSE' },
-  { id: 'vV_uImy858s', title: 'The Infidelity "Coach" Who Monetizes Affairs Is Now Suing The Betrayed Wife' },
-  { id: 'JmUaAAbA9wU', title: 'Affair Coach Chelsea Smallwood Is SUING The Ex-Wife... Allegedly' },
+interface Video {
+  id: string;
+  title: string;
+}
+
+// Just list the YouTube Video IDs here
+const videoIds = [
+  'R35g0-dG6Xw',
+  'vV_uImy858s',
+  'JmUaAAbA9wU',
 ];
 
-export default function GalleryPage() {
+// Fallback data in case the YouTube API call fails or the key is not provided.
+const fallbackData: Video[] = [
+    { id: 'R35g0-dG6Xw', title: 'Life Coach CHELSEA SMALLWOOD Is SUING Her HUSBANDS Ex Wife... It Gets WORSE' },
+    { id: 'vV_uImy858s', title: 'The Infidelity "Coach" Who Monetizes Affairs Is Now Suing The Betrayed Wife' },
+    { id: 'JmUaAAbA9wU', title: 'Affair Coach Chelsea Smallwood Is SUING The Ex-Wife... Allegedly' },
+];
+
+async function getYouTubeVideos(ids: string[]): Promise<Video[]> {
+  const apiKey = process.env.YOUTUBE_API_KEY;
+
+  if (!apiKey) {
+    console.warn("YOUTUBE_API_KEY environment variable not set. Using hardcoded video titles as fallback.");
+    return fallbackData.filter(video => ids.includes(video.id));
+  }
+
+  const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${ids.join(',')}&key=${apiKey}`;
+
+  try {
+    const response = await fetch(url, { next: { revalidate: 3600 } }); // Revalidate every hour
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("YouTube API Error:", errorData.error.message);
+      return fallbackData.filter(video => ids.includes(video.id));
+    }
+
+    const data = await response.json();
+    if (!data.items || data.items.length === 0) {
+      return fallbackData.filter(video => ids.includes(video.id));
+    }
+
+    return data.items.map((item: any) => ({
+      id: item.id,
+      title: item.snippet.title,
+    }));
+  } catch (error) {
+    console.error("Failed to fetch from YouTube API:", error);
+    return fallbackData.filter(video => ids.includes(video.id));
+  }
+}
+
+export default async function GalleryPage() {
+  const videos = await getYouTubeVideos(videoIds);
+
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <main className="flex-grow">
@@ -29,7 +77,7 @@ export default function GalleryPage() {
           </header>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {videos.map((video) => (
+            {videos.length > 0 ? videos.map((video) => (
               <div key={video.id} className="bg-card p-4 rounded-lg shadow-sm border">
                 <div className="relative overflow-hidden rounded-md" style={{ paddingTop: '56.25%' }}>
                   <iframe
@@ -43,7 +91,9 @@ export default function GalleryPage() {
                 </div>
                 <h2 className="mt-4 text-lg font-semibold text-card-foreground">{video.title}</h2>
               </div>
-            ))}
+            )) : (
+               <p className="text-center col-span-full">Could not load videos. Please try again later.</p>
+            )}
           </div>
 
           <div className="text-center mt-12">
