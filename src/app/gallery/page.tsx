@@ -16,15 +16,18 @@ interface Video {
 
 // Replaced broken video IDs with working ones.
 const videoIds = [
-  'DK14VZ4Fyl4', // Swoop
-  'iH_AYQYmZpY', // Telltale
-  '1f_u41c3y_s', // Cruel World Happy Mind
+  'MdTWPuNQ1B8', // Authentic Observer
+  'e6rHHtq5K1k',
+  '-6Zftd8C7NE', // Coop
+  'AbVsR7XzNBc', // clout 
+  'lJ8zHiwfrqs',
+  'DK14VZ4Fyl4', // Lauren
 ];
 
 // Updated fallback data to be a reliable source of working videos.
 const fallbackData: Video[] = [
     { id: 'DK14VZ4Fyl4', title: 'Life Coach CHELSEA SMALLWOOD Is SUING Her HUSBANDS Ex Wife... It Gets WORSE' },
-    { id: 'iH_AYQYmZpY', title: "The Messy Case of Chelsea Smallwood's 'Cheating' Business" },
+    { id: '-6Zftd8C7NE', title: "The Husband Stealing, Cheating, \"TikTok Life Coach\"" },
     { id: '1f_u41c3y_s', title: "The Bizarre Story of Chelsea Smallwood: The Cheating 'Coach'" },
 ];
 
