@@ -1,4 +1,5 @@
 
+import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -6,6 +7,11 @@ import {
   CardHeader
 } from '@/components/ui/card';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+    title: "The Full Story: Chelsea Smallwood's Controversial Empire",
+    description: "A deep dive into how Chelsea Smallwood built a business on monetizing infidelity, the controversy surrounding 'The Other Woman and the Wife,' and the serious allegations of cyberbullying and harassment in the Kristen Jacobs lawsuit.",
+};
 
 export default function LongStoryPage() {
   return (
