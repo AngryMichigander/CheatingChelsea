@@ -75,6 +75,60 @@ export default function Home() {
               </CardContent>
             </Card>
 
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold font-headline">
+                  Sources and Evidence
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4 text-base text-card-foreground">
+                <p>
+                  The claims made on this website are supported by evidence and
+                  public records. We believe in transparency and holding
+                  individuals accountable for their actions. Below are links to
+                  resources and news articles covering the issues mentioned.
+                </p>
+                <ul className="list-disc space-y-2 pl-5">
+                  <li>
+                    <a
+                      href="#"
+                      className="text-primary hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      News Article: &quot;The Dark Side of Online 'Empowerment'
+                      Groups&quot; - The Daily Chronicle
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-primary hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Public Statement from Kristen Jacobs on Online Harassment
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-primary hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Investigation into &quot;The Other Woman and the Wife&quot;
+                      Facebook Group Activities
+                    </a>
+                  </li>
+                </ul>
+                <p>
+                  We encourage visitors to review the information and draw their
+                  own conclusions.
+                </p>
+              </CardContent>
+            </Card>
+
             <Card className="border-2 border-destructive shadow-lg">
               <CardHeader className="text-center">
                 <CardTitle className="text-3xl font-bold font-headline text-primary">
