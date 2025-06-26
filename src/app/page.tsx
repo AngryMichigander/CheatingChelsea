@@ -27,16 +27,23 @@ export default function Home() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold font-headline">
-                  Introduction
+                  Who is Chelsea Smallwood?
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-lg text-card-foreground">
-                  This website is dedicated to shedding light on the
-                  controversial activities of Chelsea Smallwood and her online
-                  community, &quot;The Other Woman and the Wife.&quot; We aim to provide a
-                  platform for victims to share their stories and to hold
-                  accountable those who profit from others&apos; pain.
+              <CardContent className="space-y-4 text-lg text-card-foreground">
+                <p>
+                  Chelsea Smallwood is the creator and leader of a group known
+                  as &quot;The Other Woman and the Wife.&quot; Marketed as a space for
+                  female empowerment, this group has a darker side. It allegedly
+                  encourages and normalizes infidelity, creating a platform
+                  where individuals share intimate details of their affairs.
+                </p>
+                <p>
+                  While claiming to support women, the group&apos;s activities have led
+                  to significant emotional distress and real-world harm for
+                  those targeted by its members. The platform has been used to
+                  share private information without consent, blurring the lines
+                  between empowerment and exploitation.
                 </p>
               </CardContent>
             </Card>
@@ -44,17 +51,26 @@ export default function Home() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold font-headline">
-                  The Harm Caused
+                  The Harm Caused: Kristen Jacobs&apos; Story
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-lg text-card-foreground">
-                  The group, under the guise of a support network, has been
-                  accused of encouraging harassment, cyberbullying, and the
-                  doxing of individuals. Kristen Jacobs, a victim of this
-                  group&apos;s activities, has bravely come forward to share her
-                  story. Her experience highlights the severe emotional and
-                  psychological distress inflicted by this organization.
+              <CardContent className="space-y-4 text-lg text-card-foreground">
+                <p>
+                  Kristen Jacobs is one of the victims of the activities
+                  fostered by Chelsea&apos;s group. She discovered that her private
+                  text messages and personal photos were being shared and
+                  mocked within &quot;The Other Woman and the Wife.&quot; This was not
+                  just a private matter; this sensitive content was allegedly
+                  used to promote the group and Chelsea&apos;s brand, turning
+                  Kristen&apos;s personal pain into a tool for profit and
+                  recruitment.
+                </p>
+                <p>
+                  This gross violation of privacy constitutes online harassment
+                  and has had a severe impact on Kristen&apos;s life. It is a stark
+                  example of how the group&apos;s rhetoric of &quot;empowerment&quot; can be
+                  twisted into a weapon for causing harm, profiting from
+                  others&apos; suffering, and fostering a culture of cyberbullying.
                 </p>
               </CardContent>
             </Card>
