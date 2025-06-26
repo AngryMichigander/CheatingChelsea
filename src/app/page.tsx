@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -6,6 +7,7 @@ import {
   CardFooter,
   CardHeader,
 } from '@/components/ui/card';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -73,6 +75,12 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
+
+            <div className="text-center my-8">
+              <Button asChild variant="outline" size="lg">
+                <Link href="/long-story">Read The Full Story &raquo;</Link>
+              </Button>
+            </div>
 
             <Card className="border-2 border-destructive shadow-lg">
               <CardHeader className="text-center">
