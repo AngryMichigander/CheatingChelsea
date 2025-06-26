@@ -45,9 +45,7 @@ export default function LongStoryPage() {
                 <p>
                   Chelsea Smallwood&apos;s journey began with her own extramarital
                   affair. Living in Novato, California, Smallwood initially
-                  gained attention by creating TikTok content about her affair
-                  experience, including videos where she would dance while
-                  sharing details about her relationship with a married man.{' '}
+                  gained notoriety by creating TikTok content that openly celebrated her affair, including videos where she would dance while boasting about details of her relationship with a married man.{' '}
                   <strong>
                     She holds only a bachelor&apos;s degree in Economics with no
                     formal qualifications in counseling or life coaching
@@ -56,9 +54,8 @@ export default function LongStoryPage() {
                   infidelity situations.
                 </p>
                 <p>
-                  After divorcing her first husband and marrying her affair
-                  partner, with whom she now has children, Smallwood
-                  transformed her personal experience into a business model. She
+                  After her own marriage ended and she married her affair partner, with whom she now has children, Smallwood
+                  opportunistically transformed her personal scandal into a profitable business model. She
                   evolved from creating &quot;relatable affair content&quot; to
                   establishing The Other Woman and the Wife LLC, expanding
                   beyond social media into multiple revenue streams including
@@ -81,9 +78,9 @@ export default function LongStoryPage() {
                   <strong>47,300 followers and 1.1 million likes</strong>,
                   while their Instagram presence and websites (towtw.com and
                   theotherwomanandthewife.com) serve as primary touchpoints for
-                  their audience. The content strategy focuses on &quot;humanizing
-                  humans&quot; and providing &quot;coaching with compassion,&quot; though
-                  critics argue the approach normalizes harmful behavior.
+                  their audience. The content strategy, which claims to focus on &quot;humanizing
+                  humans&quot; and providing &quot;coaching with compassion,&quot; is heavily
+                  criticized for normalizing and even glorifying destructive behavior.
                 </p>
                 <p>
                   Smallwood&apos;s content evolution reflects attempts to distance
@@ -149,14 +146,8 @@ export default function LongStoryPage() {
               </CardHeader>
               <CardContent className="space-y-4 text-lg text-card-foreground">
                 <p>
-                  The business model relies on diversified income sources that
-                  capitalize on the emotional vulnerability of people affected
-                  by infidelity. Revenue comes from community membership fees,
-                  individual coaching sessions priced at premium rates despite
-                  Smallwood&apos;s lack of credentials, podcast monetization
-                  through sponsorships and advertising, retreat fees for events
-                  in Puerto Vallarta, Mexico, and online courses marketed to
-                  those seeking guidance through affair situations.
+                  The business model is built on exploiting the emotional vulnerability of people affected by infidelity. Revenue is generated through various streams: charging for community membership, offering coaching sessions at premium rates despite
+                  Smallwood&apos;s lack of credentials, podcast monetization, selling high-priced retreats in Mexico, and marketing online courses to individuals in emotionally fragile situations.
                 </p>
                 <p>
                   <strong>
@@ -184,11 +175,7 @@ export default function LongStoryPage() {
                   Chelsea Smallwood&apos;s transformation from TikTok creator
                   sharing affair stories to CEO of The Other Woman and the Wife
                   LLC illustrates how personal scandal can be monetized in the
-                  digital age. While the organization claims to provide support
-                  and understanding for those navigating complex relationship
-                  dynamics, the pending lawsuit and numerous allegations of
-                  harmful practices raise serious questions about the ethics of
-                  profiting from infidelity experiences. The organization&apos;s
+                  digital age. While the organization markets itself as a source of support, the pending lawsuit and extensive allegations of harmful practices expose the deeply questionable ethics of profiting from infidelity. The organization&apos;s
                   future depends on resolving legal challenges while attempting
                   to maintain credibility in an inherently controversial space
                   that many view as exploiting vulnerable individuals rather
