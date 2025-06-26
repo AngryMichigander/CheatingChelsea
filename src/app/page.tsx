@@ -175,10 +175,10 @@ export default function Home() {
            <p>
             For questions, comments, or concerns, please email:{' '}
             <a
-              href="mailto:notacheater@cheatingchelsea.com"
+              href="mailto:notacheater&#64;cheatingchelsea.com"
               className="text-primary hover:underline"
             >
-              notacheater@cheatingchelsea.com
+              notacheater&#64;cheatingchelsea.com
             </a>
           </p>
           <p>&copy; 2025 Cheating Chelsea Exposed. All Rights Reserved.</p>
