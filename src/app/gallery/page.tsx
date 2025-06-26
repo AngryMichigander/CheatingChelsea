@@ -24,10 +24,8 @@ const videoIds = [
 
 // Fallback data in case the YouTube API call fails or the key is not provided.
 const fallbackData: Video[] = [
-    { id: 'R35g0-dG6Xw', title: 'Life Coach CHELSEA SMALLWOOD Is SUING Her HUSBANDS Ex Wife... It Gets WORSE' },
-    { id: 'vV_uImy858s', title: 'The Infidelity "Coach" Who Monetizes Affairs Is Now Suing The Betrayed Wife' },
-    { id: 'JmUaAAbA9wU', title: 'Affair Coach Chelsea Smallwood Is SUING The Ex-Wife... Allegedly' },
-];
+    { id: 'DK14VZ4Fyl4', title: 'Life Coach CHELSEA SMALLWOOD Is SUING Her HUSBANDS Ex Wife... It Gets WORSE' },
+    ];
 
 async function getYouTubeVideos(ids: string[]): Promise<Video[]> {
   const apiKey = process.env.YOUTUBE_API_KEY;
