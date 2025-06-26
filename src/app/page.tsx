@@ -75,6 +75,40 @@ export default function Home() {
               </CardContent>
             </Card>
 
+            <Card className="border-2 border-destructive shadow-lg">
+              <CardHeader className="text-center">
+                <CardTitle className="text-3xl font-bold font-headline text-primary">
+                  Stand With Kristen
+                </CardTitle>
+                <CardDescription className="text-md pt-2 max-w-xl mx-auto">
+                  Help her fight back against online harassment and
+                  exploitation.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-center text-base text-card-foreground max-w-prose mx-auto">
+                  Kristen is taking a stand to hold Chelsea Smallwood and her
+                  organization accountable. This is not just a personal battle;
+                  it&apos;s a fight against the unethical use of private
+                  information and for-profit online harassment. Your support can
+                  help her cover legal fees and bring awareness to this
+                  important issue.
+                </p>
+              </CardContent>
+              <CardFooter className="flex justify-center pt-4">
+                <Button asChild size="lg" variant="destructive">
+                  <a
+                    href="https://www.gofundme.com/f/help-kristen-stand-against-online-harassment-for-profit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-bold"
+                  >
+                    Support Kristen&apos;s GoFundMe
+                  </a>
+                </Button>
+              </CardFooter>
+            </Card>
+
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold font-headline">
@@ -127,40 +161,6 @@ export default function Home() {
                   own conclusions.
                 </p>
               </CardContent>
-            </Card>
-
-            <Card className="border-2 border-destructive shadow-lg">
-              <CardHeader className="text-center">
-                <CardTitle className="text-3xl font-bold font-headline text-primary">
-                  Stand With Kristen
-                </CardTitle>
-                <CardDescription className="text-md pt-2 max-w-xl mx-auto">
-                  Help her fight back against online harassment and
-                  exploitation.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-center text-base text-card-foreground max-w-prose mx-auto">
-                  Kristen is taking a stand to hold Chelsea Smallwood and her
-                  organization accountable. This is not just a personal battle;
-                  it&apos;s a fight against the unethical use of private
-                  information and for-profit online harassment. Your support can
-                  help her cover legal fees and bring awareness to this
-                  important issue.
-                </p>
-              </CardContent>
-              <CardFooter className="flex justify-center pt-4">
-                <Button asChild size="lg" variant="destructive">
-                  <a
-                    href="https://www.gofundme.com/f/help-kristen-stand-against-online-harassment-for-profit"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-lg font-bold"
-                  >
-                    Support Kristen&apos;s GoFundMe
-                  </a>
-                </Button>
-              </CardFooter>
             </Card>
           </div>
         </div>
