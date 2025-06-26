@@ -181,7 +181,12 @@ export default function Home() {
               notacheater&#64;cheatingchelsea.com
             </a>
           </p>
-          <p>&copy; 2025 Cheating Chelsea Exposed. All Rights Reserved.</p>
+           <p className="mt-4 italic">
+            Disclaimer: This website is independently operated by a snarky
+            Michigander and is not affiliated with or endorsed by Kristen
+            Jacobs.
+          </p>
+          <p className="mt-2">&copy; 2025 Cheating Chelsea Exposed. All Rights Reserved.</p>
         </div>
       </footer>
     </div>
