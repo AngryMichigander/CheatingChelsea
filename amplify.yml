@@ -1,4 +1,10 @@
 version: 1
+backend:
+  phases:
+    build:
+      commands:
+        - npm ci --cache .npm
+        - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
 frontend:
   phases:
     preBuild:
@@ -7,11 +13,8 @@ frontend:
     build:
       commands:
         - echo "Build started on `date`"
-        - echo "Configuring environment variables..."
-        - echo "YOUTUBE_API_KEY value is ${YOUTUBE_API_KEY}"
-        - echo "YOUTUBE_API_KEY=${YOUTUBE_API_KEY}" > .env.production
-        - echo "Contents of .env.production file"
-        - cat .env.production
+        - echo "Available environment variables:"
+        - printenv | grep -E "(YOUTUBE|AMPLIFY)" || echo "No relevant env vars found"
         - npm run build
   artifacts:
     baseDirectory: .next
