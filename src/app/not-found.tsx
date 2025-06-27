@@ -15,10 +15,6 @@ export default function NotFound() {
               height={600}
               className="object-cover"
             />
-            <div className="text-white pt-4 pb-2">
-                 <h1 className="text-6xl font-bold tracking-wider">404</h1>
-                 <p className="text-2xl mt-2">Not Found</p>
-            </div>
         </div>
         <p className="text-muted-foreground mt-8 mb-8 text-xl">
           Oops! It looks like the page you're looking for has gone into hiding.
