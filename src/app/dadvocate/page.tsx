@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: "Dadvocate Vids - Exposing False Narratives",
+    title: "Dadvocate Vids - A curated collection of videos from The Dadvocate",
     description: "A curated collection of videos from The Dadvocate.",
     robots: {
         index: false,
@@ -23,10 +23,10 @@ const videoIds = [
   'dbPXoZ_cri8',
   'y2SfYffLZQ4',
   'CdJLCln1Kjg',
-  'zp3PRgtBOl0',
-  'XZA6c5Gg7NA',
   'GbWJfWhkOhc',
-  'pzefTg9jygs'
+  'pzefTg9jygs',
+  'zp3PRgtBOl0',
+  'XZA6c5Gg7NA'
 ];
 
 // Updated fallback data to be a reliable source of working videos.
