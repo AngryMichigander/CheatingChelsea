@@ -5,7 +5,6 @@ frontend:
       commands:
         # Set Node.js version to 20
         - nvm use 20
-        - node --version
         - npm ci
         - |
           # Retrieve the secret from Amplify's secret store
