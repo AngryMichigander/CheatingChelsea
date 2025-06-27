@@ -9,12 +9,11 @@ export default function NotFound() {
       <main className="text-center p-8 max-w-2xl mx-auto">
         <div className="bg-black p-4 inline-block rounded-lg border-2 border-gray-700 shadow-2xl">
             <Image
-              src="https://placehold.co/750x600.png"
+              src="/404-cat.jpg"
               alt="A calico cat's tail is sticking out from under a pile of papers, resembling the '404 Not Found' cat meme."
               width={750}
               height={600}
               className="object-cover"
-              data-ai-hint="cat hiding"
             />
             <div className="text-white pt-4 pb-2">
                  <h1 className="text-6xl font-bold tracking-wider">404</h1>
