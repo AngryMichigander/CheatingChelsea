@@ -7,10 +7,6 @@ import { ExternalLink } from 'lucide-react';
 export const metadata: Metadata = {
     title: "Dadvocate Vids - A curated collection of videos from The Dadvocate",
     description: "A curated collection of videos from The Dadvocate.",
-    robots: {
-        index: false,
-        follow: false,
-    }
 };
 
 interface Video {
@@ -23,9 +19,9 @@ const videoIds = [
   'dbPXoZ_cri8',
   'y2SfYffLZQ4',
   'CdJLCln1Kjg',
+  'e6rHHtq5K1k',
   'GbWJfWhkOhc',
   'pzefTg9jygs',
-  'e6rHHtq5K1k',
   'zp3PRgtBOl0',
   'XZA6c5Gg7NA'
 ];
@@ -119,6 +115,14 @@ export default async function DadvocatePage() {
             )) : (
                <p className="text-center col-span-full">Could not load videos. Please try again later.</p>
             )}
+          </div>
+          <div className="flex justify-center items-center gap-4 mt-12">
+            <Button asChild>
+              <Link href="/">Back to Home</Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link href="/gallery">View Video Gallery &raquo;</Link>
+            </Button>
           </div>
         </div>
       </main>
