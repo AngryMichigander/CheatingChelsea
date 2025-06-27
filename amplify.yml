@@ -4,10 +4,42 @@ frontend:
     preBuild:
       commands:
         - npm ci
+        - |
+          # Retrieve the secret from Amplify's secret store
+          echo "Attempting to retrieve YouTube API key from secrets..."
+          # Try to get the secret using AWS CLI
+          if command -v aws &> /dev/null; then
+            # The secret path follows the pattern: /amplify/{appId}/{branchName}/YOUTUBE_API_KEY
+            SECRET_VALUE=$(aws secretsmanager get-secret-value --secret-id /amplify/$AWS_APP_ID/$AWS_BRANCH/YOUTUBE_API_KEY --query SecretString --output text 2>/dev/null || echo "")
+            if [ ! -z "$SECRET_VALUE" ] && [ "$SECRET_VALUE" != "None" ]; then
+              echo "YOUTUBE_API_KEY=$SECRET_VALUE" >> .env.production
+              echo "Successfully retrieved secret from Secrets Manager"
+            else
+              echo "Could not retrieve secret from Secrets Manager, trying SSM..."
+              # Try SSM Parameter Store as fallback
+              SECRET_VALUE=$(aws ssm get-parameter --name /amplify/$AWS_APP_ID/$AWS_BRANCH/YOUTUBE_API_KEY --with-decryption --query Parameter.Value --output text 2>/dev/null || echo "")
+              if [ ! -z "$SECRET_VALUE" ] && [ "$SECRET_VALUE" != "None" ]; then
+                echo "YOUTUBE_API_KEY=$SECRET_VALUE" >> .env.production
+                echo "Successfully retrieved secret from SSM"
+              else
+                echo "Could not retrieve secret from SSM either"
+              fi
+            fi
+          fi
+          # Check if the secret was set via environment variable
+          if [ -z "$SECRET_VALUE" ] && [ ! -z "$YOUTUBE_API_KEY" ]; then
+            echo "YOUTUBE_API_KEY=$YOUTUBE_API_KEY" >> .env.production
+            echo "Using YOUTUBE_API_KEY from environment variable"
+          fi
+          # Show what we have
+          if [ -f .env.production ]; then
+            echo "Contents of .env.production:"
+            cat .env.production | sed 's/=.*/=***HIDDEN***/'
+          else
+            echo "No .env.production file created"
+          fi
     build:
       commands:
-        - echo "YOUTUBE_API_KEY=$YOUTUBE_API_KEY" >> .env.production
-        - env | grep YOUTUBE_API_KEY || echo "YOUTUBE_API_KEY not found in environment"
         - npm run build
   artifacts:
     baseDirectory: .next
@@ -17,5 +49,3 @@ frontend:
     paths:
       - node_modules/**/*
       - .next/cache/**/*
-  buildPath: /
-appRoot: /
