@@ -24,6 +24,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Make environment variables available to the browser
+  publicRuntimeConfig: {
+    YOUTUBE_API_KEY: process.env.YOUTUBE_API_KEY,
+  },
+  // Server-side environment variables
+  serverRuntimeConfig: {
+    YOUTUBE_API_KEY: process.env.YOUTUBE_API_KEY,
+  },
 };
 
 export default nextConfig;
