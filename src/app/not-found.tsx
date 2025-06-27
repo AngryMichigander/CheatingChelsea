@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
@@ -9,7 +10,7 @@ export default function NotFound() {
         <div className="bg-black p-4 inline-block rounded-lg border-2 border-gray-700 shadow-2xl">
             <Image
               src="https://placehold.co/750x600.png"
-              alt="A calico cat's tail is sticking out from under a pile of papers."
+              alt="A calico cat's tail is sticking out from under a pile of papers, resembling the '404 Not Found' cat meme."
               width={750}
               height={600}
               className="object-cover"
