@@ -20,16 +20,20 @@ interface Video {
 
 // Placeholder video IDs - these can be replaced with actual Dadvocate video IDs.
 const videoIds = [
-  'lJ8zHiwfrqs',
-  'q8zevCJ6TKw',
-  'DK14VZ4Fyl4'
+  'dbPXoZ_cri8',
+  'y2SfYffLZQ4',
+  'CdJLCln1Kjg',
+  'zp3PRgtBOl0',
+  'XZA6c5Gg7NA',
+  'GbWJfWhkOhc',
+  'pzefTg9jygs'
 ];
 
 // Updated fallback data to be a reliable source of working videos.
 const fallbackData: Video[] = [
-    { id: 'lJ8zHiwfrqs', title: 'Placeholder Dadvocate Video 1' },
-    { id: 'q8zevCJ6TKw', title: 'Placeholder Dadvocate Video 2' },
-    { id: 'DK14VZ4Fyl4', title: 'Placeholder Dadvocate Video 3' },
+    { id: 'dbPXoZ_cri8', title: 'Placeholder Dadvocate Video 1' },
+    { id: 'y2SfYffLZQ4', title: 'Placeholder Dadvocate Video 2' },
+    { id: 'CdJLCln1Kjg', title: 'Placeholder Dadvocate Video 3' },
 ];
 
 async function getYouTubeVideos(ids: string[]): Promise<Video[]> {
