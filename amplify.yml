@@ -4,33 +4,11 @@ frontend:
     preBuild:
       commands:
         - npm ci
-        - echo "Checking for environment variables..."
-        - printenv | grep -E "(YOUTUBE|_SECRET)" || echo "No relevant env vars found"
-        - |
-          # Check if secrets are available through Amplify's secret mechanism
-          if [ ! -z "$secrets" ]; then
-            echo "Secrets object found"
-            echo "$secrets" | jq '.' 2>/dev/null || echo "Could not parse secrets"
-          fi
     build:
       commands:
-        - |
-          # Try multiple ways to access the secret
-          if [ ! -z "$YOUTUBE_API_KEY" ]; then
-            echo "Found YOUTUBE_API_KEY in environment"
-            echo "YOUTUBE_API_KEY=$YOUTUBE_API_KEY" >> .env.production
-          elif [ ! -z "$secrets" ] && [ ! -z "$(echo $secrets | jq -r '.YOUTUBE_API_KEY' 2>/dev/null)" ]; then
-            echo "Found YOUTUBE_API_KEY in secrets object"
-            echo "YOUTUBE_API_KEY=$(echo $secrets | jq -r '.YOUTUBE_API_KEY')" >> .env.production
-          elif [ ! -z "$AMPLIFY_YOUTUBE_API_KEY" ]; then
-            echo "Found AMPLIFY_YOUTUBE_API_KEY in environment"
-            echo "YOUTUBE_API_KEY=$AMPLIFY_YOUTUBE_API_KEY" >> .env.production
-          else
-            echo "WARNING: YOUTUBE_API_KEY not found in any expected location"
-            echo "Available env vars starting with A:" 
-            printenv | grep "^A" | head -10
-          fi
-        - cat .env.production 2>/dev/null || echo "No .env.production file created"
+        - echo "Build started on `date`"
+        - echo "Configuring environment variables..."
+        - export YOUTUBE_API_KEY="${YOUTUBE_API_KEY}"
         - npm run build
   artifacts:
     baseDirectory: .next
@@ -40,5 +18,3 @@ frontend:
     paths:
       - node_modules/**/*
       - .next/cache/**/*
-  buildPath: /
-appRoot: /

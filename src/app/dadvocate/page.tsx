@@ -33,10 +33,14 @@ const fallbackData: Video[] = [
 ];
 
 async function getYouTubeVideos(ids: string[]): Promise<Video[]> {
-  const apiKey = process.env.YOUTUBE_API_KEY;
+  // Try multiple ways to get the API key
+  const apiKey = process.env.YOUTUBE_API_KEY || 
+                 process.env.NEXT_PUBLIC_YOUTUBE_API_KEY || 
+                 process.env.AMPLIFY_YOUTUBE_API_KEY || '';
 
   if (!apiKey) {
     console.warn("YOUTUBE_API_KEY environment variable not set. Using hardcoded video titles as fallback.");
+    console.log("Available env vars:", Object.keys(process.env).filter(k => k.includes('YOUTUBE') || k.includes('AMPLIFY')).join(', ') || 'none');
     return fallbackData;
   }
 
