@@ -23,7 +23,7 @@ const videoIds = [
   'GbWJfWhkOhc',
   'pzefTg9jygs',
   'zp3PRgtBOl0',
-  'XZA6c5Gg7NA'
+  'XZA6c5Gg7NA',
 ];
 
 // Updated fallback data to be a reliable source of working videos.
