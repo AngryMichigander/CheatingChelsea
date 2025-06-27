@@ -32,23 +32,25 @@ const fallbackData: Video[] = [
 ];
 
 async function getYouTubeVideos(ids: string[]): Promise<Video[]> {
-  try {
-    // Use the Amplify function endpoint
-    const response = await fetch('/api/youtube', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ videoIds: ids }),
-      next: { revalidate: 3600 }
-    });
+  const apiKey = process.env.YOUTUBE_API_KEY;
+  
+  if (!apiKey) {
+    console.warn("YOUTUBE_API_KEY environment variable not set. Using hardcoded video titles as fallback.");
+    return fallbackData;
+  }
 
+  const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${ids.join(',')}&key=${apiKey}`;
+
+  try {
+    const response = await fetch(url, { next: { revalidate: 3600 } }); // Revalidate every hour
     if (!response.ok) {
-      throw new Error(`API error: ${response.status}`);
+      const errorData = await response.json();
+      console.error("YouTube API Error:", errorData.error.message);
+      console.log("Falling back to hardcoded video data.");
+      return fallbackData;
     }
 
     const data = await response.json();
-    
     if (!data.items || data.items.length === 0) {
       console.warn("YouTube API returned no items for the given video IDs. Falling back to hardcoded data.");
       return fallbackData;
