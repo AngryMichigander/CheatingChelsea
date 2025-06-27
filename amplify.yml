@@ -8,7 +8,10 @@ frontend:
       commands:
         - echo "Build started on `date`"
         - echo "Configuring environment variables..."
-        - export YOUTUBE_API_KEY="${YOUTUBE_API_KEY}"
+        - echo "YOUTUBE_API_KEY value: ${YOUTUBE_API_KEY}"
+        - echo "YOUTUBE_API_KEY=${YOUTUBE_API_KEY}" > .env.production
+        - echo "Contents of .env.production:"
+        - cat .env.production
         - npm run build
   artifacts:
     baseDirectory: .next
