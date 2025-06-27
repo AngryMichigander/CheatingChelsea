@@ -1,32 +1,32 @@
-import { MetadataRoute } from 'next'
- 
-export const dynamic = "force-static";
+import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://cheatingchelsea.com';
+
   return [
     {
-      url: 'https://cheatingchelsea.com',
+      url: `${baseUrl}/`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'yearly',
       priority: 1,
     },
     {
-      url: 'https://cheatingchelsea.com/gallery',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://cheatingchelsea.com/dadvocate',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://cheatingchelsea.com/long-story',
+      url: `${baseUrl}/long-story`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/gallery`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
       priority: 0.5,
     },
-  ]
+    {
+      url: `${baseUrl}/dadvocate`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.5,
+    },
+  ];
 }

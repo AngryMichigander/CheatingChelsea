@@ -29,12 +29,11 @@ const videoIds = [
 const fallbackData: Video[] = [
     { id: 'DK14VZ4Fyl4', title: 'Life Coach CHELSEA SMALLWOOD Is SUING Her HUSBANDS Ex Wife... It Gets WORSE' },
     { id: '-6Zftd8C7NE', title: "The Husband Stealing, Cheating, \"TikTok Life Coach\"" },
-    { id: '1f_u41c3y_s', title: "The Bizarre Story of Chelsea Smallwood: The Cheating 'Coach'" },
 ];
 
 async function getYouTubeVideos(ids: string[]): Promise<Video[]> {
   const apiKey = process.env.YOUTUBE_API_KEY;
-
+  
   if (!apiKey) {
     console.warn("YOUTUBE_API_KEY environment variable not set. Using hardcoded video titles as fallback.");
     return fallbackData;
