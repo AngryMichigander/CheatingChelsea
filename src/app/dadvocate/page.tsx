@@ -30,7 +30,6 @@ const videoIds = [
 const fallbackData: Video[] = [
     { id: 'dbPXoZ_cri8', title: 'Placeholder Dadvocate Video 1' },
     { id: 'y2SfYffLZQ4', title: 'Placeholder Dadvocate Video 2' },
-    { id: 'CdJLCln1Kjg', title: 'Placeholder Dadvocate Video 3' },
 ];
 
 async function getYouTubeVideos(ids: string[]): Promise<Video[]> {
