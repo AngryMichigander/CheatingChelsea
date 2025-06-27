@@ -5,8 +5,12 @@ import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: "Video Gallery - Community Coverage of Chelsea Smallwood",
-    description: "Watch YouTube commentary and analysis on Chelsea Smallwood, The Other Woman and the Wife, and the ongoing controversy.",
+    title: "Dadvocate Vids - Exposing False Narratives",
+    description: "A collection of videos from the Dadvocate community, providing counter-narratives and analysis.",
+    robots: {
+        index: false,
+        follow: false,
+    }
 };
 
 interface Video {
@@ -14,22 +18,18 @@ interface Video {
   title: string;
 }
 
-// Replaced broken video IDs with working ones.
+// Placeholder video IDs - these can be replaced with actual Dadvocate video IDs.
 const videoIds = [
-  'MdTWPuNQ1B8', // Authentic Observer
-  'e6rHHtq5K1k',
-  '-6Zftd8C7NE', // Coop
-  'AbVsR7XzNBc', // clout 
   'lJ8zHiwfrqs',
-  'q8zevCJ6TKw'
-  // 'DK14VZ4Fyl4', // Lauren
+  'q8zevCJ6TKw',
+  'DK14VZ4Fyl4'
 ];
 
 // Updated fallback data to be a reliable source of working videos.
 const fallbackData: Video[] = [
-    { id: 'DK14VZ4Fyl4', title: 'Life Coach CHELSEA SMALLWOOD Is SUING Her HUSBANDS Ex Wife... It Gets WORSE' },
-    { id: '-6Zftd8C7NE', title: "The Husband Stealing, Cheating, \"TikTok Life Coach\"" },
-    { id: '1f_u41c3y_s', title: "The Bizarre Story of Chelsea Smallwood: The Cheating 'Coach'" },
+    { id: 'lJ8zHiwfrqs', title: 'Placeholder Dadvocate Video 1' },
+    { id: 'q8zevCJ6TKw', title: 'Placeholder Dadvocate Video 2' },
+    { id: 'DK14VZ4Fyl4', title: 'Placeholder Dadvocate Video 3' },
 ];
 
 async function getYouTubeVideos(ids: string[]): Promise<Video[]> {
@@ -74,7 +74,7 @@ async function getYouTubeVideos(ids: string[]): Promise<Video[]> {
   }
 }
 
-export default async function GalleryPage() {
+export default async function DadvocatePage() {
   const videos = await getYouTubeVideos(videoIds);
 
   return (
@@ -83,10 +83,10 @@ export default async function GalleryPage() {
         <div className="container mx-auto max-w-5xl py-12 px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-primary font-headline">
-              YouTube Community Coverage
+              Dadvocate Vids
             </h1>
             <p className="mt-4 text-xl text-muted-foreground">
-              Commentary and analysis from creators across the platform.
+              A curated collection of videos providing important context and counter-narratives.
             </p>
           </header>
 
@@ -114,12 +114,6 @@ export default async function GalleryPage() {
             )) : (
                <p className="text-center col-span-full">Could not load videos. Please try again later.</p>
             )}
-          </div>
-
-          <div className="text-center mt-12">
-            <Button asChild>
-              <Link href="/">Back to Home</Link>
-            </Button>
           </div>
         </div>
       </main>
