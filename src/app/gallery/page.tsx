@@ -33,7 +33,7 @@ const fallbackData: Video[] = [
 
 async function getYouTubeVideos(ids: string[]): Promise<Video[]> {
   const apiKey = process.env.YOUTUBE_API_KEY;
-  console.log("Using YouTube API Key:", apiKey ? "Available" : "Not Set");
+  
   if (!apiKey) {
     console.warn("YOUTUBE_API_KEY environment variable not set. Using hardcoded video titles as fallback.");
     return fallbackData;
