@@ -57,7 +57,14 @@ async function getYouTubeVideos(ids: string[]): Promise<Video[]> {
       return fallbackData;
     }
     
-    const fetchedVideos = data.items.map((item: any) => ({
+    interface YouTubeVideoItem {
+      id: string;
+      snippet: {
+        title: string;
+      };
+    }
+    
+    const fetchedVideos = data.items.map((item: YouTubeVideoItem) => ({
       id: item.id,
       title: item.snippet.title,
     }));

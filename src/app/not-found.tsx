@@ -17,7 +17,7 @@ export default function NotFound() {
             />
         </div>
         <p className="text-muted-foreground mt-8 mb-8 text-xl">
-          Oops! It looks like the page you're looking for has gone into hiding.
+          Oops! It looks like the page you&apos;re looking for has gone into hiding.
         </p>
         <Button asChild size="lg">
           <Link href="/">Go Back to Home</Link>
