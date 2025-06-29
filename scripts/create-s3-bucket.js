@@ -71,11 +71,12 @@ async function main() {
     };
 
     // Write policy to temporary file
-    require('fs').writeFileSync('/tmp/bucket-policy.json', JSON.stringify(bucketPolicy, null, 2));
+    const tempFilePath = path.join(os.tmpdir(), 'bucket-policy.json');
+    require('fs').writeFileSync(tempFilePath, JSON.stringify(bucketPolicy, null, 2));
 
     console.log('\n🔓 Setting bucket policy for public read access...');
     try {
-      execSync(`aws s3api put-bucket-policy --bucket ${bucketName} --policy file:///tmp/bucket-policy.json --no-cli-pager`, { stdio: 'inherit' });
+      execSync(`aws s3api put-bucket-policy --bucket ${bucketName} --policy file://${tempFilePath} --no-cli-pager`, { stdio: 'inherit' });
       console.log('✅ Bucket policy applied');
     } catch (error) {
       console.error('❌ Failed to apply bucket policy');
