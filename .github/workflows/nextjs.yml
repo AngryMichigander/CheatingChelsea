@@ -57,7 +57,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.CC_OIDC_ROLE }}
-          aws-region: us-east-2
+          aws-region: us-east-1
           
       - name: Deploy to S3
         run: |
@@ -66,4 +66,5 @@ jobs:
       - name: Output deployment URL
         run: |
           echo "🎉 Deployment successful!"
-          echo "Your site is available at: http://${{ secrets.S3_BUCKET_NAME }}.s3-website-us-east-2.amazonaws.com"
+          echo "S3 website URL: http://${{ secrets.S3_BUCKET_NAME }}.s3-website-us-east-1.amazonaws.com"
+          echo "Note: Site will be served through CloudFlare proxy for production"
