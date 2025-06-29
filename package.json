@@ -7,9 +7,12 @@
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
     "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
     "build": "next build",
+    "build:static": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "deploy:s3": "npm run build:static && aws s3 sync out/ s3://$S3_BUCKET_NAME --delete --no-cli-pager",
+    "create-s3-bucket": "node scripts/create-s3-bucket.js"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.13.0",
