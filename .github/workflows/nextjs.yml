@@ -56,7 +56,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::499518182498:role/cheatingchelsea-github-deployment
+          role-to-assume: ${{ secrets.CC_OIDC_ROLE }}
           aws-region: us-east-2
           
       - name: Deploy to S3
