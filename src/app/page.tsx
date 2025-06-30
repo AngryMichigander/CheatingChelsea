@@ -8,6 +8,7 @@ import {
   CardHeader,
 } from '@/components/ui/card';
 import Link from 'next/link';
+import { Footer } from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -176,36 +177,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="text-center py-6 text-sm text-muted-foreground">
-        <div className="container mx-auto">
-          <p>
-            This website, cheatingchelsea.com, is dedicated to raising
-            awareness and supporting the victims.
-          </p>
-           <p>
-            For questions, comments, or concerns, please email:{' '}
-            <a
-              href="mailto:notacheater&#64;cheatingchelsea.com"
-              className="text-primary hover:underline"
-            >
-              notacheater&#64;cheatingchelsea.com
-            </a>
-          </p>
-           <p className="mt-4 italic">
-            Disclaimer: This website is independently operated by a{' '}
-            <a
-              href="https://angrymichigander.com"
-              className="text-primary hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              snarky Michigander
-            </a>{' '}
-            and is not affiliated with or endorsed by Kristen Jacobs.
-          </p>
-          <p className="mt-2">&copy; 2025 Cheating Chelsea Exposed. All Rights Reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
