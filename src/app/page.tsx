@@ -192,9 +192,16 @@ export default function Home() {
             </a>
           </p>
            <p className="mt-4 italic">
-            Disclaimer: This website is independently operated by a snarky
-            Michigander and is not affiliated with or endorsed by Kristen
-            Jacobs.
+            Disclaimer: This website is independently operated by a{' '}
+            <a
+              href="https://angrymichigander.com"
+              className="text-primary hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              snarky Michigander
+            </a>{' '}
+            and is not affiliated with or endorsed by Kristen Jacobs.
           </p>
           <p className="mt-2">&copy; 2025 Cheating Chelsea Exposed. All Rights Reserved.</p>
         </div>
