@@ -13,7 +13,7 @@
     "typecheck": "tsc --noEmit",
     "deploy:s3": "npm run build:static && aws s3 sync out/ s3://$S3_BUCKET_NAME --delete --no-cli-pager",
     "create-s3-bucket": "node scripts/create-s3-bucket.js",
-    "prepare": "husky"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.13.0",
