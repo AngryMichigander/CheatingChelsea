@@ -22,12 +22,13 @@ export function Footer() {
             className="text-primary hover:underline"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="snarky Michigander (opens in a new tab)"
           >
             snarky Michigander
           </a>{' '}
           and is not affiliated with or endorsed by Kristen Jacobs.
         </p>
-        <p className="mt-2">&copy; 2025 Cheating Chelsea Exposed. All Rights Reserved.</p>
+        <p className="mt-2">&copy; {new Date().getFullYear()} Cheating Chelsea Exposed. All Rights Reserved.</p>
       </div>
     </footer>
   );
