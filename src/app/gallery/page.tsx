@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
-import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
     title: "Video Gallery - Community Coverage of Chelsea Smallwood",
@@ -85,9 +84,7 @@ export default async function GalleryPage() {
   const videos = await getYouTubeVideos(videoIds);
 
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
-      <main className="flex-grow">
-        <div className="container mx-auto max-w-5xl py-12 px-4 sm:px-6 lg:px-8">
+    <div className="container mx-auto max-w-5xl py-12 px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-primary font-headline">
               YouTube Community Coverage
@@ -128,10 +125,6 @@ export default async function GalleryPage() {
               <Link href="/">Back to Home</Link>
             </Button>
           </div>
-        </div>
-      </main>
-
-      <Footer />
     </div>
   );
 }

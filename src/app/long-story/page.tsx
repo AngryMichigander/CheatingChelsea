@@ -7,7 +7,6 @@ import {
   CardHeader,
 } from '@/components/ui/card';
 import Link from 'next/link';
-import { Footer } from '@/components/Footer';
 export const metadata: Metadata = {
     title: "The Full Story: Chelsea Smallwood's Controversial Empire",
     description: "A deep dive into how Chelsea Smallwood built a business on monetizing infidelity, the controversy surrounding 'The Other Woman and the Wife,' and the serious allegations of cyberbullying and harassment in the Kristen Jacobs lawsuit.",
@@ -15,9 +14,7 @@ export const metadata: Metadata = {
 
 export default function LongStoryPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
-      <main className="flex-grow">
-        <div className="container mx-auto max-w-4xl py-12 px-4 sm:px-6 lg:px-8">
+    <div className="container mx-auto max-w-4xl py-12 px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-primary font-headline">
               Chelsea Smallwood&apos;s Controversial Empire
@@ -199,10 +196,6 @@ export default function LongStoryPage() {
                 </Button>
             </div>
           </div>
-        </div>
-      </main>
-
-      <Footer />
     </div>
   );
 }
