@@ -21,7 +21,10 @@ const videoIds = [
   '-6Zftd8C7NE', // Coop
   'AbVsR7XzNBc', // clout 
   'lJ8zHiwfrqs',
-  'q8zevCJ6TKw'
+  'q8zevCJ6TKw',
+  'XzBQ-klpoRM', // New video 1
+  'Zoi_YFcRyaE', // New video 2
+  'P2QUvDHvokM'  // New video 3
   // 'DK14VZ4Fyl4', // Lauren
 ];
 
