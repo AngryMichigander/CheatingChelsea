@@ -17,7 +17,7 @@ A Next.js application built to expose harmful activities and support Kristen Jac
 - **Language**: TypeScript
 - **UI Components**: shadcn/ui component library
 - **Styling**: Tailwind CSS with custom theming
-- **Hosting**: Supports GitHub Pages, Firebase App Hosting, and Vercel
+- **Hosting**: Supports Static hosting (S3), Firebase App Hosting, and Vercel
 - **AI Integration**: Google Genkit (minimal implementation)
 
 ## 📋 Prerequisites
@@ -30,7 +30,7 @@ A Next.js application built to expose harmful activities and support Kristen Jac
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/cheatingchelsea.git
+git clone ssh://gitea@git.deco.sh/signal-works/cheatingchelsea.git
 cd cheatingchelsea
 ```
 
@@ -86,8 +86,8 @@ npm run start
 
 This application supports multiple deployment platforms:
 
-### GitHub Pages
-The project includes GitHub Actions workflow for automatic deployment to GitHub Pages.
+### Static Hosting (AWS S3)
+The project includes CI/CD workflow for automatic deployment to AWS S3.
 
 ### Firebase App Hosting
 Deploy using Firebase CLI:
@@ -96,7 +96,7 @@ firebase deploy
 ```
 
 ### Vercel
-Deploy directly from GitHub repository through Vercel dashboard or CLI.
+Deploy directly from Git repository through Vercel dashboard or CLI.
 
 ## 📁 Project Structure
 
