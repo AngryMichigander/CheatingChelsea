@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master, feature/* ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: https://codeberg.org/actions/checkout@v4
+        
+      - name: Cache node modules
+        uses: https://codeberg.org/actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+            
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run linting
+        run: npm run lint
+        
+      - name: Run type checking
+        run: npm run typecheck
+        
+      - name: Build application
+        run: npm run build
+        env:
+          # Use empty string for YOUTUBE_API_KEY during CI build
+          YOUTUBE_API_KEY: ""
