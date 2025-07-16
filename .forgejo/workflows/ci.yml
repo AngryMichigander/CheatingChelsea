@@ -11,15 +11,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Checkout code
-        uses: https://codeberg.org/actions/checkout@v4
-        
-      - name: Cache node modules
-        uses: https://codeberg.org/actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+        uses: actions/checkout@v4
             
       - name: Install dependencies
         run: npm ci
