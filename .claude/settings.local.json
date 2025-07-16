@@ -3,9 +3,12 @@
     "allow": [
       "Bash(find:*)",
       "Bash(ls:*)",
+      "Bash(git pull:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
       "Bash(mv:*)",
-      "Bash(git checkout:*)",
-      "Bash(git add:*)"
+      "Bash(git checkout:*)"
     ],
     "deny": []
   }
