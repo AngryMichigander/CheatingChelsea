@@ -33,9 +33,3 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          
-      - name: Upload build artifacts
-        uses: https://codeberg.org/actions/upload-artifact@v3
-        with:
-          name: build-output
-          path: out/
