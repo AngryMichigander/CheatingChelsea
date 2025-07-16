@@ -11,7 +11,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "deploy:s3": "npm run build:static && aws s3 sync out/ s3://$S3_BUCKET_NAME --delete --no-cli-pager",
+    "deploy:s3": "npm run build:static && aws s3 sync out/ s3://$S3_BUCKET_NAME --delete",
     "create-s3-bucket": "node scripts/create-s3-bucket.js",
     "prepare": "husky install"
   },
