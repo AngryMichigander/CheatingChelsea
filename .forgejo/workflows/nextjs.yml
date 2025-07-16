@@ -23,13 +23,7 @@ jobs:
     steps:
       - name: Checkout
         uses: https://code.forgejo.org/actions/checkout@v4
-        
-      - name: Setup Node.js
-        uses: https://code.forgejo.org/actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: 'npm'
-          
+                  
       - name: Create .env.local file
         run: |
           echo "YOUTUBE_API_KEY=${{ secrets.YOUTUBE_API_KEY }}" > .env.local
