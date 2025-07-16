@@ -29,6 +29,9 @@ export function Footer() {
           and is not affiliated with or endorsed by Kristen Jacobs.
         </p>
         <p className="mt-2">&copy; {new Date().getFullYear()} Cheating Chelsea Exposed. All Rights Reserved.</p>
+        <p className="mt-1 text-xs text-muted-foreground/50">
+          Build: {process.env.NEXT_PUBLIC_GIT_COMMIT || 'development'}
+        </p>
       </div>
     </footer>
   );
