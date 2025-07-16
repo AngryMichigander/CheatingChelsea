@@ -21,6 +21,10 @@ npm run start        # Start production server
 # Quality Checks
 npm run lint         # Run Next.js linting
 npm run typecheck    # Run TypeScript type checking
+
+# Deployment
+npm run deploy:s3    # Deploy to AWS S3 bucket
+npm run create-s3-bucket # Create S3 bucket for deployment
 ```
 
 ## Architecture Overview
@@ -29,7 +33,7 @@ npm run typecheck    # Run TypeScript type checking
 - **App Router**: Uses Next.js App Router in `src/app/`
 - **Pages**: Homepage, Gallery (YouTube videos), Dadvocate (curated videos), Long Story
 - **Static Generation**: Pages use static generation with ISR for external data
-- **Deployment**: Supports GitHub Pages, Firebase App Hosting, and Vercel
+- **Deployment**: Supports Static hosting (S3), Firebase App Hosting, and Vercel
 
 ### Key Patterns
 1. **UI Components**: Full shadcn/ui component library in `src/components/ui/`
@@ -43,6 +47,7 @@ npm run typecheck    # Run TypeScript type checking
 - **YouTube API**: Gallery and Dadvocate pages fetch video data with 1-hour cache
 - **AI Integration**: Genkit setup exists but is minimally implemented
 - **Theme**: Dark/light mode support via next-themes
+- **Pre-commit**: Husky runs linting before commits
 
 ### Adding Features
 - New pages: Create directory in `src/app/` with `page.tsx` and metadata export
