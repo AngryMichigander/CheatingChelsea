@@ -30,7 +30,18 @@ export function Footer() {
         </p>
         <p className="mt-2">&copy; {new Date().getFullYear()} Cheating Chelsea Exposed. All Rights Reserved.</p>
         <p className="mt-1 text-xs text-muted-foreground/50">
-          Build: {process.env.NEXT_PUBLIC_GIT_COMMIT || 'development'}
+          Build: {process.env.NEXT_PUBLIC_GIT_COMMIT ? (
+            <a
+              href={`https://git.deco.sh/signal-works/cheatingchelsea/commit/${process.env.NEXT_PUBLIC_GIT_COMMIT}`}
+              className="hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {process.env.NEXT_PUBLIC_GIT_COMMIT}
+            </a>
+          ) : (
+            'development'
+          )}
         </p>
       </div>
     </footer>
