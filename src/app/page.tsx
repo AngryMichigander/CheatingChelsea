@@ -1,4 +1,5 @@
 
+import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -8,6 +9,48 @@ import {
   CardHeader,
 } from '@/components/ui/card';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: "Cheating Chelsea Exposed - Support Kristen Jacobs",
+  description: "Exposing harmful activities by Chelsea Smallwood and 'The Other Woman and the Wife' group. Support Kristen Jacobs, a victim of false accusations and family court injustice.",
+  keywords: "chelsea smallwood, kristen jacobs, family court, false accusations, parental alienation, gofundme support, texas divorce",
+  authors: [{ name: "Cheating Chelsea" }],
+  openGraph: {
+    title: "Cheating Chelsea Exposed - Stand Against Injustice",
+    description: "Learn the truth about Chelsea Smallwood's harmful actions and support Kristen Jacobs through her legal battle against false accusations.",
+    url: "https://cheatingchelsea.com",
+    siteName: "Cheating Chelsea",
+    type: "website",
+    images: [
+      {
+        url: "https://cheatingchelsea.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Cheating Chelsea Exposed"
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cheating Chelsea Exposed",
+    description: "Exposing harmful activities and supporting victims of false accusations",
+    images: ["https://cheatingchelsea.com/og-image.jpg"],
+  },
+  alternates: {
+    canonical: "https://cheatingchelsea.com",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
 
 export default function Home() {
   return (
@@ -80,6 +123,9 @@ export default function Home() {
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link href="/gallery">View Video Gallery &raquo;</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link href="/dadvocate">Dadvocate Videos &raquo;</Link>
               </Button>
             </div>
 
