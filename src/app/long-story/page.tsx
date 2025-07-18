@@ -10,6 +10,43 @@ import Link from 'next/link';
 export const metadata: Metadata = {
     title: "The Full Story: Chelsea Smallwood's Controversial Empire",
     description: "A deep dive into how Chelsea Smallwood built a business on monetizing infidelity, the controversy surrounding 'The Other Woman and the Wife,' and the serious allegations of cyberbullying and harassment in the Kristen Jacobs lawsuit.",
+    keywords: "chelsea smallwood story, the other woman and the wife lawsuit, kristen jacobs case, cyberbullying allegations, infidelity business, social media harassment",
+    authors: [{ name: "Cheating Chelsea" }],
+    openGraph: {
+        title: "The Full Story - Chelsea Smallwood's Controversial Empire",
+        description: "Comprehensive timeline and details about Chelsea Smallwood's harmful business practices, cyberbullying allegations, and the Kristen Jacobs lawsuit.",
+        url: "https://cheatingchelsea.com/long-story",
+        siteName: "Cheating Chelsea",
+        type: "article",
+        images: [
+            {
+                url: "https://cheatingchelsea.com/og-story.jpg",
+                width: 1200,
+                height: 630,
+                alt: "The Full Story - Chelsea Smallwood Exposed"
+            }
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "The Full Story - Chelsea Smallwood Exposed",
+        description: "Complete timeline of harmful business practices and cyberbullying allegations",
+        images: ["https://cheatingchelsea.com/og-story.jpg"],
+    },
+    alternates: {
+        canonical: "https://cheatingchelsea.com/long-story",
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
 };
 
 export default function LongStoryPage() {
@@ -187,12 +224,15 @@ export default function LongStoryPage() {
               </CardContent>
             </Card>
 
-            <div className="flex justify-center items-center gap-4 mt-12">
+            <div className="flex flex-wrap justify-center items-center gap-4 mt-12">
                 <Button asChild>
                     <Link href="/">Back to Home</Link>
                 </Button>
                 <Button asChild variant="outline">
                     <Link href="/gallery">View Video Gallery &raquo;</Link>
+                </Button>
+                <Button asChild variant="outline">
+                    <Link href="/dadvocate">Dadvocate Videos &raquo;</Link>
                 </Button>
             </div>
           </div>
