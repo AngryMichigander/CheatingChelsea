@@ -6,7 +6,44 @@ import { ExternalLink } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: "Video Gallery - Community Coverage of Chelsea Smallwood",
-    description: "Watch YouTube commentary and analysis on Chelsea Smallwood, The Other Woman and the Wife, and the ongoing controversy.",
+    description: "Watch YouTube commentary and analysis on Chelsea Smallwood, The Other Woman and the Wife, and the ongoing controversy. Community voices exposing harmful behaviors and supporting victims.",
+    keywords: "chelsea smallwood videos, the other woman and the wife, youtube commentary, community coverage, toxic behavior exposed, family court stories",
+    authors: [{ name: "Cheating Chelsea" }],
+    openGraph: {
+        title: "Video Gallery - Chelsea Smallwood Exposed",
+        description: "Community videos and commentary exposing Chelsea Smallwood's harmful actions. Watch testimonials and analysis from various content creators.",
+        url: "https://cheatingchelsea.com/gallery",
+        siteName: "Cheating Chelsea",
+        type: "website",
+        images: [
+            {
+                url: "https://cheatingchelsea.com/og-gallery.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Video Gallery - Community Coverage"
+            }
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Video Gallery - Chelsea Smallwood Exposed",
+        description: "Community videos exposing harmful behaviors and supporting victims",
+        images: ["https://cheatingchelsea.com/og-gallery.jpg"],
+    },
+    alternates: {
+        canonical: "https://cheatingchelsea.com/gallery",
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
 };
 
 interface Video {
@@ -124,6 +161,15 @@ export default async function GalleryPage() {
           </div>
 
           <div className="text-center mt-12">
+            <div className="mb-8 p-6 bg-muted rounded-lg">
+              <h2 className="text-2xl font-bold mb-3">Looking for more videos?</h2>
+              <p className="text-muted-foreground mb-4">
+                Check out our curated collection of videos from The Dadvocate featuring family court experiences and fathers&apos; rights advocacy.
+              </p>
+              <Button asChild variant="outline" size="lg">
+                <Link href="/dadvocate">View Dadvocate Videos &raquo;</Link>
+              </Button>
+            </div>
             <Button asChild>
               <Link href="/">Back to Home</Link>
             </Button>

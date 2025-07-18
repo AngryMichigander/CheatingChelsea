@@ -6,7 +6,44 @@ import { ExternalLink } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: "Dadvocate Vids - A curated collection of videos from The Dadvocate",
-    description: "A curated collection of videos from The Dadvocate.",
+    description: "A curated collection of videos from The Dadvocate highlighting family court experiences, parental alienation awareness, and advocacy for fathers' rights. Watch real stories and testimonials.",
+    keywords: "dadvocate, fathers rights, family court, parental alienation, custody battles, divorce stories, co-parenting",
+    authors: [{ name: "Cheating Chelsea" }],
+    openGraph: {
+        title: "Dadvocate Vids - Family Court Stories & Fathers' Rights",
+        description: "Watch curated videos from The Dadvocate featuring real experiences with family court, parental alienation, and advocacy for equal parenting rights.",
+        url: "https://cheatingchelsea.com/dadvocate",
+        siteName: "Cheating Chelsea",
+        type: "website",
+        images: [
+            {
+                url: "https://cheatingchelsea.com/og-dadvocate.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Dadvocate Videos Collection"
+            }
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Dadvocate Vids - Family Court Stories",
+        description: "Curated videos on fathers' rights, parental alienation, and family court experiences",
+        images: ["https://cheatingchelsea.com/og-dadvocate.jpg"],
+    },
+    alternates: {
+        canonical: "https://cheatingchelsea.com/dadvocate",
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
 };
 
 interface Video {
