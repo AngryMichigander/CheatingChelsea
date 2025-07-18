@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ main, master ]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     runs-on: self-hosted
@@ -13,33 +17,24 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
             
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Cache Next.js build
-        uses: actions/cache@v3
-        with:
-          path: ${{ github.workspace }}/.next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.[jt]s', '**/*.[jt]sx') }}
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
-            
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --prefer-offline --no-audit --no-fund
+        env:
+          NODE_OPTIONS: '--max-old-space-size=4096'
+          UV_THREADPOOL_SIZE: 16
         
-      - name: Run linting
-        run: npm run lint
-        
-      - name: Run type checking
-        run: npm run typecheck
+      - name: Run linting and type checking in parallel
+        run: |
+          npm run lint &
+          npm run typecheck &
+          wait
+        env:
+          NODE_OPTIONS: '--max-old-space-size=4096'
         
       - name: Build application
         run: npm run build
         env:
           # Use empty string for YOUTUBE_API_KEY during CI build
           YOUTUBE_API_KEY: ""
+          NODE_OPTIONS: '--max-old-space-size=4096'
+          NEXT_TELEMETRY_DISABLED: 1

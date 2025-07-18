@@ -17,7 +17,7 @@ A Next.js application built to expose harmful activities and support Kristen Jac
 - **Language**: TypeScript
 - **UI Components**: shadcn/ui component library
 - **Styling**: Tailwind CSS with custom theming
-- **Hosting**: Supports Static hosting (S3), Firebase App Hosting, and Vercel
+- **Hosting**: AWS S3 static hosting
 - **AI Integration**: Google Genkit (minimal implementation)
 
 ## 📋 Prerequisites
@@ -89,14 +89,6 @@ This application supports multiple deployment platforms:
 ### Static Hosting (AWS S3)
 The project includes CI/CD workflow for automatic deployment to AWS S3.
 
-### Firebase App Hosting
-Deploy using Firebase CLI:
-```bash
-firebase deploy
-```
-
-### Vercel
-Deploy directly from Git repository through Vercel dashboard or CLI.
 
 ## 📁 Project Structure
 

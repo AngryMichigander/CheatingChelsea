@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Next.js 15.3.3 application with TypeScript, React 18, and Firebase hosting. The app exposes harmful activities and supports Kristen Jacobs through a GoFundMe campaign.
+This is a Next.js 15.3.3 application with TypeScript, React 18, and multiple deployment options. The app exposes harmful activities and supports Kristen Jacobs through a GoFundMe campaign.
 
 ## Essential Commands
 
@@ -15,7 +15,8 @@ npm run genkit:dev   # Start Genkit AI development server
 npm run genkit:watch # Start Genkit with file watching
 
 # Production
-npm run build        # Build the Next.js application
+npm run build        # Build with git commit hash injection
+npm run build:static # Standard Next.js build
 npm run start        # Start production server
 
 # Quality Checks
@@ -23,8 +24,8 @@ npm run lint         # Run Next.js linting
 npm run typecheck    # Run TypeScript type checking
 
 # Deployment
-npm run deploy:s3    # Deploy to AWS S3 bucket
-npm run create-s3-bucket # Create S3 bucket for deployment
+npm run deploy:s3    # Deploy to AWS S3 bucket (requires S3_BUCKET_NAME env var)
+npm run create-s3-bucket # Interactive S3 bucket setup
 ```
 
 ## Architecture Overview
@@ -32,24 +33,71 @@ npm run create-s3-bucket # Create S3 bucket for deployment
 ### App Structure
 - **App Router**: Uses Next.js App Router in `src/app/`
 - **Pages**: Homepage, Gallery (YouTube videos), Dadvocate (curated videos), Long Story
-- **Static Generation**: Pages use static generation with ISR for external data
-- **Deployment**: Supports Static hosting (S3), Firebase App Hosting, and Vercel
+- **Static Export**: Configured with `output: 'export'` for static hosting
+- **Deployment**: AWS S3 static hosting
 
 ### Key Patterns
 1. **UI Components**: Full shadcn/ui component library in `src/components/ui/`
 2. **Styling**: Tailwind CSS with custom theme, use `cn()` utility for class merging
-3. **Data Fetching**: Server-side fetching in page components with fallback data
-4. **Environment Variables**: Only `YOUTUBE_API_KEY` is used
+3. **Data Fetching**: Server-side fetching with fallback data, 1-hour cache for YouTube API
+4. **Environment Variables**: `YOUTUBE_API_KEY` (required), `S3_BUCKET_NAME` (for deployment)
 5. **Path Alias**: Use `@/` for imports from `src/` directory
 
+### Build & Deployment Details
+- **Version Tracking**: Build process injects git commit hash into footer via `scripts/set-git-commit.js`
+- **Static Files**: Build outputs to `out/` directory for S3 deployment
+- **Build Errors**: TypeScript and ESLint errors are ignored (configured in next.config.ts)
+- **S3 Deployment**: Uses dotenv-cli to load environment variables from `.env.local`
+- **Pre-commit Hooks**: Husky installed for running lint checks before commits
+
 ### Development Notes
-- **Build Configuration**: TypeScript and ESLint errors are ignored during builds
-- **YouTube API**: Gallery and Dadvocate pages fetch video data with 1-hour cache
-- **AI Integration**: Genkit setup exists but is minimally implemented
+- **No Testing Framework**: Project currently has no test setup
+- **AI Integration**: Genkit configured with Google AI (Gemini 2.0 Flash) but minimally implemented
 - **Theme**: Dark/light mode support via next-themes
-- **Pre-commit**: Husky runs linting before commits
+- **Image Optimization**: Configured for YouTube thumbnails and placeholder images
 
 ### Adding Features
-- New pages: Create directory in `src/app/` with `page.tsx` and metadata export
+- New pages: Create directory in `src/app/` with `page.tsx` and export metadata
 - New components: Add to `src/components/` or use existing shadcn/ui components
-- API integration: Use server components with async/await and error handling
+- YouTube videos: Update video IDs in gallery/page.tsx or dadvocate/page.tsx, then rebuild
+
+## Git Workflow & Pull Requests
+
+### Creating Pull Requests with tea
+Use the `tea` command instead of `gh` for all Git operations. When creating PRs:
+
+```bash
+# Create PR with title only (description must be added via web UI)
+tea pr create --title "Your PR title"
+
+# With additional options
+tea pr create --title "Your PR title" --base main --head feature-branch
+
+# Note: tea does not support setting PR description via CLI
+# You must add the description through the web interface after creation
+```
+
+### PR Description Template
+After creating a PR with tea, add this description format via the web UI:
+
+```markdown
+## Summary
+- Brief bullet points of what this PR does
+
+## Changes
+- Detailed list of changes made
+- Files modified/added/deleted
+- Implementation details
+
+## Test plan
+- [ ] Steps to test the changes
+- [ ] What to verify
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+```
+
+## Code Style Guidelines
+- Always use 'tea' instead of 'gh' for Git operations
+- Follow existing code patterns and conventions
+- Use TypeScript strict mode practices
+- Maintain consistent formatting with Prettier/ESLint
