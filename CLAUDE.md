@@ -61,5 +61,43 @@ npm run create-s3-bucket # Interactive S3 bucket setup
 - New components: Add to `src/components/` or use existing shadcn/ui components
 - YouTube videos: Update video IDs in gallery/page.tsx or dadvocate/page.tsx, then rebuild
 
+## Git Workflow & Pull Requests
+
+### Creating Pull Requests with tea
+Use the `tea` command instead of `gh` for all Git operations. When creating PRs:
+
+```bash
+# Create PR with title only (description must be added via web UI)
+tea pr create --title "Your PR title"
+
+# With additional options
+tea pr create --title "Your PR title" --base main --head feature-branch
+
+# Note: tea does not support setting PR description via CLI
+# You must add the description through the web interface after creation
+```
+
+### PR Description Template
+After creating a PR with tea, add this description format via the web UI:
+
+```markdown
+## Summary
+- Brief bullet points of what this PR does
+
+## Changes
+- Detailed list of changes made
+- Files modified/added/deleted
+- Implementation details
+
+## Test plan
+- [ ] Steps to test the changes
+- [ ] What to verify
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+```
+
 ## Code Style Guidelines
-- Always use 'tea' instead of 'gh'
+- Always use 'tea' instead of 'gh' for Git operations
+- Follow existing code patterns and conventions
+- Use TypeScript strict mode practices
+- Maintain consistent formatting with Prettier/ESLint
