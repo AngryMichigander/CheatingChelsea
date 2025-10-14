@@ -127,6 +127,9 @@ export default function Home() {
               <Button asChild variant="outline" size="lg">
                 <Link href="/dadvocate">Dadvocate Videos &raquo;</Link>
               </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link href="/case-updates">Case Updates &raquo;</Link>
+              </Button>
             </div>
 
             <Card className="border-2 border-destructive shadow-lg">
