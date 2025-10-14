@@ -19,7 +19,9 @@
       "WebFetch(domain:cheatingchelsea.com)",
       "Bash(npm install:*)",
       "Bash(npm run typecheck:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "mcp__serena__get_current_config",
+      "mcp__serena__activate_project"
     ],
     "deny": []
   }
