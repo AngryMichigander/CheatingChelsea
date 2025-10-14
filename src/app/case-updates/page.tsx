@@ -1,12 +1,11 @@
 'use client';
 
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { legalDocuments, timelineEvents, type LegalDocument } from '@/lib/legal-documents';
+import { legalDocuments, timelineEvents } from '@/lib/legal-documents';
 import { Download, FileText, Scale, Home, Filter } from 'lucide-react';
 import { useState, useMemo } from 'react';
 
