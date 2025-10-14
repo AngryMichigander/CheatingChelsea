@@ -40,6 +40,9 @@ next-env.d.ts
 .genkit/*
 .env*
 
+# claude code
+.claude/
+
 # firebase
 firebase-debug.log
 firestore-debug.log
