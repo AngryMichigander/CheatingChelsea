@@ -1,3 +1,5 @@
+import { NetworkFooter } from '@/components/NetworkFooter';
+
 export function Footer() {
   return (
     <footer className="text-center py-6 text-sm text-muted-foreground">
@@ -43,6 +45,7 @@ export function Footer() {
             'development'
           )}
         </p>
+        <NetworkFooter />
       </div>
     </footer>
   );
