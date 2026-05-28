@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master, "feature/*" ]
+  pull_request:
+    branches: [ main, master ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --no-fund
+        env:
+          NODE_OPTIONS: '--max-old-space-size=4096'
+          UV_THREADPOOL_SIZE: 16
+
+      - name: Lint + typecheck in parallel
+        run: |
+          npm run lint &
+          npm run typecheck &
+          wait
+        env:
+          NODE_OPTIONS: '--max-old-space-size=4096'
+
+      - name: Build application
+        run: npm run build
+        env:
+          YOUTUBE_API_KEY: ""
+          NODE_OPTIONS: '--max-old-space-size=4096'
+          NEXT_TELEMETRY_DISABLED: 1
